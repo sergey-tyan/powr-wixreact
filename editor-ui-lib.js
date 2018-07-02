@@ -1,10 +1,14 @@
+var React = require('react');
+var ReactDOM = require('react-dom');
+var LinkedStateMixin = require('react/lib/LinkedStateMixin');
+
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("./react-with-addons"), require("lodash"), require("./wix.min"), require("./react-dom"), require("./jquery-3.1.1"));
+		module.exports = factory(React, require("lodash"), require("./wix.min"), ReactDOM, require("./jquery-3.1.1"));
 	else if(typeof define === 'function' && define.amd)
 		define("UI", ["./react-with-addons", "lodash", "./wix.min", "./react-dom", "./jquery-3.1.1"], factory);
 	else if(typeof exports === 'object')
-		exports["UI"] = factory(require("./react-with-addons"), require("lodash"), require("./wix.min"), require("./react-dom"), require("./jquery-3.1.1"));
+		exports["UI"] = factory(React, require("lodash"), require("./wix.min"), ReactDOM, require("./jquery-3.1.1"));
 	else
 		root["UI"] = factory(root["./react-with-addons"], root["lodash"], root["./wix.min"], root["./react-dom"], root["./jquery-3.1.1"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_11__, __WEBPACK_EXTERNAL_MODULE_12__, __WEBPACK_EXTERNAL_MODULE_20__, __WEBPACK_EXTERNAL_MODULE_25__, __WEBPACK_EXTERNAL_MODULE_73__) {
@@ -8244,7 +8248,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = React.createClass({
 
 	    displayName: 'languagePicker',
-	    mixins: [React.addons.LinkedStateMixin],
+	    mixins: [LinkedStateMixin],
 	    getInitialState: function getInitialState() {
 	        return {
 	            languages: [{ symbol: 'En', native: 'English' }, { symbol: 'Da', native: 'Dansk' }, { symbol: 'De', native: 'Deutsch' }, { symbol: 'Es', native: 'EspaÃ±ol' }, { symbol: 'Fr', native: 'FranÃ§ais' }, { symbol: 'It', native: 'Italiano' }, { symbol: 'Nl', native: 'Nederlands' }, { symbol: 'No', native: 'Norsk' }, { symbol: 'Pl', native: 'Polski' }, { symbol: 'Pt', native: 'PortuguÃªs' }, { symbol: 'Ru', native: 'Ð ÑƒÑÑÐºÐ¸Ð¹' }, { symbol: 'Sv', native: 'Svenska' }, { symbol: 'Ja', native: 'æ—¥æœ¬èªž' }, { symbol: 'Ko', native: 'í•œêµ­ì–´' }, { symbol: 'Tr', native: 'TÃ¼rkÃ§e' }, { symbol: 'He', native: '×¢×‘×¨×™×ª' }],
@@ -9014,7 +9018,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    return React.createClass({
 	        displayName: 'textInputSync',
-	        mixins: [React.addons.LinkedStateMixin, inputFocusMixin, inputMixin, inputValidationMixin, util.translationMixin, util.blockOuterScrollMixin],
+	        mixins: [LinkedStateMixin, inputFocusMixin, inputMixin, inputValidationMixin, util.translationMixin, util.blockOuterScrollMixin],
 	        propTypes: {
 	            label: React.PropTypes.string,
 	            type: React.PropTypes.string,
@@ -9343,7 +9347,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    return React.createClass({
 	        displayName: 'textInputAsync',
-	        mixins: [React.addons.LinkedStateMixin, inputMixin, inputFocusMixin, inputValidationMixin, inputValidationAsyncMixin, util.translationMixin, util.blockOuterScrollMixin],
+	        mixins: [LinkedStateMixin, inputMixin, inputFocusMixin, inputValidationMixin, inputValidationAsyncMixin, util.translationMixin, util.blockOuterScrollMixin],
 	        propTypes: {
 	            label: React.PropTypes.string,
 	            type: React.PropTypes.string,
@@ -9954,7 +9958,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = React.createClass({
 
 	    displayName: 'paletteDisplayer',
-	    mixins: [React.addons.LinkedStateMixin],
+	    mixins: [LinkedStateMixin],
 	    propTypes: {
 	        label: React.PropTypes.string,
 	        defaultValue: React.PropTypes.bool,
